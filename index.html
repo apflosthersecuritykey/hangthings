@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picture Hanging Height</title>
+  <style>
+    body {
+      font-family: Helvetica;
+      color: white;
+      background-color: cornflowerblue;
+    }
+    
+    input {
+      font-size: 20px;
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Picture Hanging Height</h1>
+  <form action="javascript:void(0);" onsubmit="submitForm();">
+    <input type="number" name="desired_middle_height" placeholder="Desired middle height">
+    <input type="number" name="height_of_the_painting" placeholder="Height of the painting">
+    <input type="number" name="distance_from_top_to_hook" placeholder="Distance from top to hook">
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+    function submitForm() {
+      var desiredMiddleHeight = parseInt(document.querySelector('input[name="desired_middle_height"]').value);
+      var heightOfThePainting = parseInt(document.querySelector('input[name="height_of_the_painting"]').value);
+      var distanceFromTopToHook = parseInt(document.querySelector('input[name="distance_from_top_to_hook"]').value);
+      var pictureHangingHeight = desiredMiddleHeight + (heightOfThePainting / 2) - distanceFromTopToHook;
+      var p = document.createElement('p');
+      p.textContent = 'The picture hanging height is: ' + pictureHangingHeight;
+      document.body.appendChild(p);
+    }
+  </script>
+</body>
+</html>
